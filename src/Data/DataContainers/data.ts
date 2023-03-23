@@ -2,6 +2,30 @@ import { DynamicFieldData } from "../../helper/dynamic-control-types";
 
 export const fields: DynamicFieldData[] = [
     {
+        label: "Was planen Sie? *",
+        inputType: "radio",
+        fieldName: "planning",
+        defaultValue: "",
+        options: [
+            { label: "Vollsanierung", value: "Vollsanierung" },
+            { label: "Neubau", value: "Neubau" },
+            { label: "Teilsanierung", value: "Teilsanierung " },
+        ],
+        config: { required: true },
+    },
+    {
+        label: "Wie Groß ist das Badezimmer *",
+        inputType: "radio",
+        fieldName: "size",
+        defaultValue: "",
+        options: [
+            { label: "bis zu 3m", value: "short" },
+            { label: "4m bis 7m", value: "middle" },
+            { label: "ab 8m", value: "big" },
+        ],
+        config: { required: true },
+    },
+    {
         fieldName: "name",
         inputType: "text",
         label: "Name",
@@ -10,42 +34,21 @@ export const fields: DynamicFieldData[] = [
             required: "Required",
         },
     },
-    {
-        fieldName: "age",
-        inputType: "number",
-        label: "Age",
-        defaultValue: 18,
-        config: {
-            required: "Required",
-        },
-    },
 
     {
-        fieldName: "ss",
+        fieldName: "pourpose",
         inputType: "checkbox",
-        label: "Languagess",
+        label: "Was soll gemacht werden?",
         options: [
-            { value: "english", label: "English" },
-            { value: "french", label: "French" },
+            { label: "Dusche", value: "Dusche" },
+            { label: "Badewanne", value: "Badewanne" },
         ],
-        defaultValue: "english",
+        defaultValue: "",
     },
     {
         fieldName: "address",
         inputType: "text",
         label: "Address",
         defaultValue: "",
-    },
-    {
-        label: "Gender",
-        inputType: "radio", // hier wird der neue Wert "radio" für "inputType" verwendet
-        fieldName: "gender",
-        defaultValue: "",
-        options: [
-            { label: "Male", value: "male" },
-            { label: "Female", value: "female" },
-            { label: "Other", value: "other" },
-        ],
-        config: { required: true },
     },
 ];

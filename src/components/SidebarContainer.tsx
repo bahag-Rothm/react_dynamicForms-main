@@ -12,9 +12,9 @@ const Sidebar: React.FC<Sidebarprobs> = () => {
 
     return (
         <div className="z-30 h-full bg-white shadow-2xl">
-            <div className="z-40 flex bg-white border-1 border-grey-100 h-[7%]">
+            <div className="z-40 flex bg-white border-1 border-grey-100 h-[7%] ">
                 <div
-                    className={` w-[80%] ${
+                    className={`arrow w-[80%] ${
                         currentPage === 1 ? "invisible" : "visible"
                     } `}
                 >
@@ -47,8 +47,10 @@ const Sidebar: React.FC<Sidebarprobs> = () => {
                 </button>
                 <button
                     onClick={inc}
-                    className={`h-10 p-5 text-center font-bold leading-normal text-white bg-bh-green hover:bg-bh-green-hover mx-auto flex flex-col justify-center transition duration-150 ease-in-out border border-transparent select-none whitespace-nowrap ${
-                        currentPage === 4 ? "invisible" : "visible"
+                    className={`btn-true ${
+                        currentPage === 4 || currentPage === 1
+                            ? "invisible"
+                            : "visible"
                     }`}
                 >
                     Weiter

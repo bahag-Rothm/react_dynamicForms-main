@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn-true {
+      @apply  h-10;
+      @apply p-5;
+      @apply text-center;
+      @apply font-bold;
+      @apply leading-normal;
+      @apply text-white;
+      @apply bg-bh-green;
+      @apply hover:bg-bh-green-hover;
+      @apply mx-auto;
+      @apply flex ;
+      @apply flex-col;
+      @apply justify-center;
+      @apply transition;
+      @apply duration-150;
+      @apply ease-in-out ;
+      @apply border;
+      @apply border-transparent;
+      @apply select-none;
+      @apply whitespace-nowrap
+    }
+    .arrow {
+      @apply bg-bh-gray;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-right: 20px solid;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    
+    
+  }

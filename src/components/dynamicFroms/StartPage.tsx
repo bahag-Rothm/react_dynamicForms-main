@@ -1,11 +1,14 @@
 import JsonData from "../../Data/Json/StartingTextData.json";
 import { useEffect, useState } from "react";
-
+import { useStore } from "../../store/CurrentPageStore";
 interface StartPageProps {
     onNext: () => void;
 }
 
 export const StartPage = ({ onNext }: StartPageProps) => {
+    const inc = useStore((state) => state.inc);
+    const currentPage = useStore((state) => state.currentPage);
+
     const { headerText, subHeaderText } = JsonData;
     const [fachzentrum, setFachzentrum] = useState(true);
     const [telefon, setTelefon] = useState(false);
@@ -124,6 +127,9 @@ export const StartPage = ({ onNext }: StartPageProps) => {
                     </label>
                 </div>
             </form>
+            <button onClick={inc} className="btn-true">
+                Weiter
+            </button>
         </div>
     );
 };
