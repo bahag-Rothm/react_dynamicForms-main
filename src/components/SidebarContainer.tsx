@@ -4,10 +4,8 @@ import { FinishPage } from "./dynamicFroms/FinishPage";
 
 import { ProjectDetailForm } from "./dynamicFroms/ProjectDetailForm";
 import { StartPage } from "./dynamicFroms/StartPage";
-import SidebarHeader from "./SidebarHeader";
 
 interface Sidebarprobs {}
-
 const Sidebar: React.FC<Sidebarprobs> = () => {
     const [currentForm, setCurrentForm] = useState(1);
 
@@ -25,12 +23,17 @@ const Sidebar: React.FC<Sidebarprobs> = () => {
     };
 
     return (
-        <div
-            className={` bg-white shadow-2xl ${
-                currentForm === 4 ? "h-[100%]" : "h-[90%]"
-            }`}
-        >
-            {currentForm !== 1 && <SidebarHeader></SidebarHeader>}
+        <div className="z-30 h-full bg-white shadow-2xl">
+            <div className="z-40 flex bg-white border-1 border-grey-100 h-[7%]">
+                <div
+                    className={` w-[80%] ${
+                        currentForm === 1 ? "invisible" : "visible"
+                    } `}
+                >
+                    Bild
+                </div>
+                <div className="w-[20%]">X</div>
+            </div>
             {currentForm === 1 && <StartPage onNext={handleNextForm} />}
             {currentForm === 2 && (
                 <ProjectDetailForm fields={fields} onNext={handleNextForm} />
@@ -41,7 +44,9 @@ const Sidebar: React.FC<Sidebarprobs> = () => {
 
             <div
                 className={` container w-[25%] fixed items-center bg-white h-[10%] bottom-0 border-1 border-grey-100 flex justify-center ${
-                    currentForm === 4 ? "invisible" : "visible"
+                    currentForm === 4 || currentForm === 1
+                        ? "invisible"
+                        : "visible"
                 } `}
             >
                 <button
