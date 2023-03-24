@@ -26,13 +26,10 @@ export const fields: DynamicFieldData[] = [
         config: { required: true },
     },
     {
-        fieldName: "name",
+        fieldName: "moreInformation",
         inputType: "text",
-        label: "Name",
+        label: "Sonstiges:",
         defaultValue: "",
-        config: {
-            required: "Required",
-        },
     },
 
     {
@@ -43,12 +40,6 @@ export const fields: DynamicFieldData[] = [
             { label: "Dusche", value: "Dusche" },
             { label: "Badewanne", value: "Badewanne" },
         ],
-        defaultValue: "",
-    },
-    {
-        fieldName: "address",
-        inputType: "text",
-        label: "Address",
         defaultValue: "",
     },
 ];

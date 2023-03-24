@@ -1,6 +1,5 @@
 import SidebarContainer from "./SidebarContainer";
 
-
 interface SidebarLayoutprobs {
     NavToogle: boolean;
 }
@@ -12,7 +11,7 @@ const SidebarLayout: React.FC<SidebarLayoutprobs> = ({ NavToogle }) => {
         <div
             className={
                 NavToogle === true
-                    ? " z-20 float-right ease-in-out bg-white w-[25%] duration-200 h-screen"
+                    ? " z-20 float-right ease-in-out bg-white md:w-[25%] duration-200 h-screen sm:w-full"
                     : "fixed left-[-100%]"
             }
         >

@@ -8,6 +8,7 @@ module.exports = {
                 "bh-green": "#537e1a",
                 "bh-gray": "#a0a0a0",
                 "bh-dark-gray": "#666666",
+                "bh-text-gray": "#EFEFEF",
             },
             boxShadow: {
                 "bh-shadow": "0px 35px 60px -15px rgba(0, 0, 0, 0.3)",

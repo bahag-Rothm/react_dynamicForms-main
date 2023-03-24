@@ -14,7 +14,7 @@ export const DynamicControl = ({
         case "text":
             return (
                 <input
-                    className="p-3 m-3 bg-bh-gray"
+                    className="w-full h-20 p-3 m-3 bg-bh-text-gray"
                     type="text"
                     {...register(fieldName, config)}
                     defaultValue={defaultValue}

@@ -40,7 +40,7 @@ export const ProjectDetailForm = ({
                             >
                                 {d.label}
                             </label>
-                            <div>
+                            <div className="grid grid-cols-2 gap-4">
                                 <DynamicControl {...d} />
                             </div>
                         </div>
@@ -48,7 +48,7 @@ export const ProjectDetailForm = ({
                 </FormProvider>
 
                 <button
-                    className="p-3 m-3 rounded-md shadow-lg "
+                    className="p-3 rounded-md shadow-lg "
                     type="submit"
                     disabled={isSubmitting}
                 >

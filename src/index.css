@@ -33,5 +33,25 @@
       border-bottom-right-radius: 10px;
     }
     
+    input[type="radio"]:not(:checked)  {
+      width: 17px;
+      height: 17px;
+      background-color: #EFEFEF; /* Hintergrundfarbe */
+      border: none; /* Rand entfernen */
+      transition: all 0.3s ease-in-out;
+      border-radius: 50%;
+      -webkit-appearance: none;
+      appearance: none;
+
+
+    }
     
+    /* Aktiver Radio-Button-Stil */
+    input[type="radio"]:checked {
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: #666666; /* Hintergrundfarbe */
+      border: none; 
+      border-radius: 50%;
+    }
   }
