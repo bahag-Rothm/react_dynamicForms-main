@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SidebarLayout from "./components/SidebarLayout";
+import Sidebar from "./components/Layout/SidebarContainer";
 import "./styles.css";
 
 export default function App() {
@@ -9,7 +9,7 @@ export default function App() {
     const [NavToogle, setNav] = useState<boolean>(true);
     return (
         <div className="z-0 w-full h-screen bg-gray-200">
-            <SidebarLayout NavToogle={NavToogle}></SidebarLayout>
+            <Sidebar NavToogle={NavToogle}></Sidebar>
 
             <div className="z-0 flex w-24 h-8 bg-blue-500">
                 <div onClick={handleNav} className="">

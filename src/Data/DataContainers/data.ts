@@ -19,9 +19,9 @@ export const fields: DynamicFieldData[] = [
         fieldName: "size",
         defaultValue: "",
         options: [
-            { label: "bis zu 3m", value: "short" },
-            { label: "4m bis 7m", value: "middle" },
-            { label: "ab 8m", value: "big" },
+            { label: "bis zu 3m (Kleines Bad)", value: "short" },
+            { label: "4m bis 7m (Mittelgroßes Bad) ", value: "middle" },
+            { label: "ab 8m (Großes Bad)", value: "big" },
         ],
         config: { required: true },
     },

@@ -49,7 +49,7 @@ export const DynamicControl = ({
             return (
                 <>
                     {options?.map((option: SelectOption) => (
-                        <label key={option.value}>
+                        <label key={option.value} className="radio_label">
                             <input
                                 type="checkbox"
                                 value={option.value}
@@ -65,7 +65,7 @@ export const DynamicControl = ({
             return (
                 <>
                     {options?.map((option: SelectOption) => (
-                        <label key={option.value}>
+                        <label key={option.value} className="radio_label">
                             <input
                                 type="radio"
                                 value={option.value}
@@ -78,6 +78,8 @@ export const DynamicControl = ({
                 </>
             );
         default:
-            return <input type="text" />;
+            return (
+                <input type="text" className="w-full p-3 m-3 text-bh-gray" />
+            );
     }
 };
