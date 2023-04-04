@@ -1,10 +1,17 @@
 import { useStore } from "../../store/CurrentPageStore";
-interface Headerprobs {}
-const Header: React.FC<Headerprobs> = () => {
+
+interface Headerprobs {
+    toggleClosePage: () => void;
+}
+const Header: React.FC<Headerprobs> = ({ toggleClosePage }) => {
     const currentPage = useStore((state) => state.currentPage);
 
+    const handleClick = () => {
+        toggleClosePage();
+    };
+
     return (
-        <div className="z-40 flex bg-white h-[7%] ">
+        <div className=" flex bg-white h-[7%] ">
             <div
                 className={`w-[80%] flex justify-between ${
                     currentPage === 1 ? "invisible" : "visible"
@@ -20,7 +27,7 @@ const Header: React.FC<Headerprobs> = () => {
                 </div>
             </div>
             <div className="w-[20%] h-full flex items-center justify-center ml-1 align-middle text-3xl ">
-                <button>X</button>
+                <button onClick={handleClick}>X</button>
             </div>
         </div>
     );

@@ -9,6 +9,8 @@ import { SummaryPage } from "../FormPages/SummaryPage";
 import { PersonalData } from "../FormPages/PersonalData";
 import { DatePicker } from "../FormPages/DatePicker";
 import { CostPage } from "../FormPages/CostPage";
+import { useState } from "react";
+import { ClosePage } from "../ClosePage";
 
 interface Sidebarprobs {
     NavToogle: boolean;
@@ -16,6 +18,12 @@ interface Sidebarprobs {
 const Sidebar: React.FC<Sidebarprobs> = ({ NavToogle }) => {
     const inc = useStore((state) => state.inc);
     const currentPage = useStore((state) => state.currentPage);
+
+    const [ClosePageToogle, setClosePageToogle] = useState<boolean>(false);
+
+    const handleClosePage = () => {
+        setClosePageToogle(!ClosePageToogle);
+    };
 
     return (
         <div
@@ -25,22 +33,30 @@ const Sidebar: React.FC<Sidebarprobs> = ({ NavToogle }) => {
                     : "fixed left-[-100%]"
             }
         >
-            <div className="z-30 h-full bg-white shadow-2xl">
-                <Header></Header>
-
-                {currentPage === 1 && <StartPage onNext={inc} />}
-                {currentPage === 2 && (
-                    <ProjectDetailForm fields={fields} onNext={inc} />
-                )}
-                {currentPage === 3 && <CostPage onNext={inc}></CostPage>}
-                {currentPage === 4 && <DatePicker onNext={inc}></DatePicker>}
-                {currentPage === 5 && (
-                    <PersonalData onNext={inc}></PersonalData>
-                )}
-                {currentPage === 6 && <SummaryPage onNext={inc}></SummaryPage>}
-                {currentPage === 7 && <FinishPage onNext={inc}></FinishPage>}
-                <Footer></Footer>
-            </div>
+            <Header toggleClosePage={handleClosePage} />
+            {ClosePageToogle && <ClosePage />}
+            {!ClosePageToogle && (
+                <div className="z-30 h-full bg-white shadow-2xl">
+                    {currentPage === 1 && <StartPage onNext={inc} />}
+                    {currentPage === 2 && (
+                        <ProjectDetailForm fields={fields} onNext={inc} />
+                    )}
+                    {currentPage === 3 && <CostPage onNext={inc}></CostPage>}
+                    {currentPage === 4 && (
+                        <DatePicker onNext={inc}></DatePicker>
+                    )}
+                    {currentPage === 5 && (
+                        <PersonalData onNext={inc}></PersonalData>
+                    )}
+                    {currentPage === 6 && (
+                        <SummaryPage onNext={inc}></SummaryPage>
+                    )}
+                    {currentPage === 7 && (
+                        <FinishPage onNext={inc}></FinishPage>
+                    )}
+                    <Footer></Footer>
+                </div>
+            )}
         </div>
     );
 };

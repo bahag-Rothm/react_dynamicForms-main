@@ -19,3 +19,4 @@ export const useStore = create<Page>((set: SetState<Page>) => ({
             currentPage: state.currentPage - 1,
         })),
 }));
+
