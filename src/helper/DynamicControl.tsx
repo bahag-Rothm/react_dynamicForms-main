@@ -14,7 +14,7 @@ export const DynamicControl = ({
         case "text":
             return (
                 <input
-                    className="m-3"
+                    className="w-full h-20 p-3 m-3 bg-bh-text-gray"
                     type="text"
                     {...register(fieldName, config)}
                     defaultValue={defaultValue}
@@ -47,20 +47,29 @@ export const DynamicControl = ({
 
         case "checkbox":
             return (
-                <input
-                    type="radio"
-                    {...register(fieldName, config)}
-                    defaultValue={defaultValue}
-                />
+                <>
+                    {options?.map((option: SelectOption) => (
+                        <label key={option.value} className="radio_label">
+                            <input
+                                type="checkbox"
+                                value={option.value}
+                                className="p-3 m-3 text-bh-gray"
+                                {...register(fieldName, config)}
+                            />
+                            {option.label}
+                        </label>
+                    ))}
+                </>
             );
         case "radio":
             return (
                 <>
                     {options?.map((option: SelectOption) => (
-                        <label key={option.value}>
+                        <label key={option.value} className="radio_label">
                             <input
                                 type="radio"
                                 value={option.value}
+                                className="p-3 m-3 text-bh-gray"
                                 {...register(fieldName, config)}
                             />
                             {option.label}
@@ -69,6 +78,8 @@ export const DynamicControl = ({
                 </>
             );
         default:
-            return <input type="text" />;
+            return (
+                <input type="text" className="w-full p-3 m-3 text-bh-gray" />
+            );
     }
 };

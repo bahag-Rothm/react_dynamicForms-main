@@ -1,3 +1,97 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @layer components {
+      .btn-true {
+        @apply  h-10;
+        @apply p-5;
+        @apply text-center;
+        @apply font-bold;
+        @apply leading-normal;
+        @apply text-white;
+        @apply bg-bh-green;
+        @apply hover:bg-bh-green-hover;
+        @apply mx-auto;
+        @apply flex ;
+        @apply flex-col;
+        @apply justify-center;
+        @apply transition;
+        @apply duration-150;
+        @apply ease-in-out ;
+        @apply border;
+        @apply border-transparent;
+        @apply select-none;
+        @apply whitespace-nowrap
+      }
+      .arrow {
+        background: #EFEFEF;
+        border-top: 25px solid #EFEFEF;
+        border-bottom: 25px solid #EFEFEF;
+        border-left: 15px solid white;
+        border-top-left-radius: -20px;
+        border-bottom-left-radius: -20px;
+        
+      }
+      input[type="radio"]:not(:checked)  {
+        position: flex;
+        width: 12px;
+        height: 12px;
+        background-color: #EFEFEF; /* Hintergrundfarbe */
+        border: none; /* Rand entfernen */
+        transition: all 0.3s ease-in-out;
+        border-radius: 50%;
+        -webkit-appearance: none;
+        appearance: none;
+
+
+      }
+      
+      input[type="radio"]:checked {
+        position: flex;
+        width: 12px;
+        height: 12px;
+        background-color: #666666;
+        border: none;
+        transition: all 0.3s ease-in-out;
+        border-radius: 50%;
+        -webkit-appearance: none;
+        appearance: none;
+        accent-color: #666666;
+      }
+    
+      .radio_label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 5px;
+        
+      }
+
+      input[type="checkbox"]:not(:checked)  {
+        position: flex;
+        width: 12px;
+        height: 12px;
+        background-color: #EFEFEF; /* Hintergrundfarbe */
+        border: none; /* Rand entfernen */
+        transition: all 0.3s ease-in-out;
+   
+        -webkit-appearance: none;
+        appearance: none;
+
+
+      }
+
+      input[type="checkbox"]:checked {
+        position: flex;
+        width: 12px;
+        height: 12px;
+        background-color: #666666;
+        border: none;
+        transition: all 0.3s ease-in-out;
+
+        -webkit-appearance: none;
+        appearance: none;
+        accent-color: #666666;
+      }
+    }
